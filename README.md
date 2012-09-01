@@ -1,5 +1,13 @@
 # node-imagemagick
 
+## Dependencies
+
+Requires imagemagick libraries
+
+``` 
+brew install imagemagick
+```
+
 [Imagemagick](http://www.imagemagick.org/) module for [Node](http://nodejs.org/).
 
 You can install this module using [npm](http://github.com/isaacs/npm):
