@@ -1,13 +1,14 @@
 var sys = require('sys'),
     fs = require('fs'),
-    im = require('./imagemagick');
-
-var path = 'img.jpg';
-var timeStarted = new Date;
+    im = require('../index.js'),
+	path = require('path'),
+	srcPath = path.normalize(__dirname + '/img.jpg'),
+	dstPath = path.normalize(__dirname + '/cropped.jpg'),
+	timeStarted = new Date();
 
 im.crop({
-  srcPath: path,
-  dstPath: 'cropped.jpg',
+  srcPath: srcPath,
+  dstPath: dstPath,
   width: 2000,
   height: 900,
   quality: 1
@@ -16,7 +17,7 @@ im.crop({
   
   sys.puts('real time taken for convert: ' + (new Date() - timeStarted) + ' ms')
   
-  im.identify(['-format', '%b', path + '.cropped.jpg'], function(err, r){
+  im.identify(['-format', '%b', dstPath], function(err, r){
     if (err) throw err;
     sys.puts('size: ' + r.substr(0, r.length-2) + ' Bytes');
   })

@@ -1,6 +1,6 @@
 var sys = require('sys'),
     fs = require('fs'),
-    im = require('./imagemagick');
+    im = require('../index.js');
 
 var path = 'sample-images/jpeg5.jpg';
 var imdata = fs.readFileSync(path, 'binary');
